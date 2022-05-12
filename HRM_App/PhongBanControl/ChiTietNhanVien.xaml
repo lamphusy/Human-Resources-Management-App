@@ -1,0 +1,150 @@
+﻿<Window x:Class="HRM_App.PhongBanControl.ChiTietNhanVien"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+        xmlns:local="clr-namespace:HRM_App.PhongBanControl"
+        mc:Ignorable="d"
+        Title="ChiTietNhanVien" Height="644" Width="1044"
+      Background="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"
+      >
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Background" Value="#33D3D3D3"/>
+            <Setter Property="Padding" Value="10,0,0,0"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="White">
+        <Border>
+            <Grid>
+                <WrapPanel HorizontalAlignment="Right" Margin="5" Name="btnExit" Cursor="Hand" Width="30" Height="30" VerticalAlignment="Top" MouseDown="btnExit_MouseDown">
+                    <materialDesign:PackIcon Kind="CloseBox"  Width="30" Height="30" Foreground="#FFC81E1E"  MouseDown="btnExit_MouseDown" />
+                </WrapPanel>
+
+                <Border BorderThickness="2" CornerRadius="2" Margin="32" Grid.Row="1">
+                    <Grid Margin="15">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1.2*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Width="220" Orientation="Vertical" Grid.Row="0">
+                                <Grid Height="50" Background="#FF311B59"  >
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#CCFFFFFF" >Ảnh đại diện</TextBlock>
+                                </Grid>
+                                <Border BorderThickness="1" BorderBrush="Gray">
+                                    <Grid Width="200" Height="200" Margin="10" Background="Gray">
+                                        <Image Source="../img/user_male.png" Stretch="Fill" Width="200" Height="200" Name="imgAvatar"/>
+                                    </Grid>
+
+                                </Border>
+                            </WrapPanel>
+                            <WrapPanel  HorizontalAlignment="Center" VerticalAlignment="Top" Width="220" Orientation="Vertical" Height="257" Margin="8.65,289,7.85,0" Grid.RowSpan="2">
+                                <Grid Height="50" Background="#FF311B59" Width="220">
+                                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#CCFFFFFF" >Liên hệ</TextBlock>
+                                </Grid>
+                                <Border BorderThickness="1" BorderBrush="Gray" Padding="10" Height="207" Width="220">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <WrapPanel Orientation="Vertical" VerticalAlignment="Center">
+                                            <TextBlock Margin="0 0 5 0" Width="40" HorizontalAlignment="Left ">SĐT</TextBlock>
+                                            <TextBox Width="190" Name="txtSDT"></TextBox>
+                                        </WrapPanel>
+                                        <WrapPanel Orientation="Vertical" Grid.Row="1" VerticalAlignment="Center">
+                                            <TextBlock Margin="0 0 5 0" Width="40" HorizontalAlignment="Left">Email</TextBlock>
+                                            <TextBox Width="190" Name="txtEmail"></TextBox>
+                                        </WrapPanel>
+                                    </Grid>
+                                </Border>
+                            </WrapPanel>
+                        </Grid>
+
+                        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Gray" >
+                            <StackPanel >
+                                <Grid Height="50" Background="#FF4A0351" Margin="0 0 0 5">
+                                    <TextBlock Foreground="#CCFFFFFF">Thông tin cơ bản</TextBlock>
+                                </Grid>
+                                <StackPanel Orientation="Horizontal" Margin="10 10 0 5">
+                                    <TextBlock Width="120">Mã nhân viên:</TextBlock>
+                                    <TextBox  Width="200" Name="txtMa"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10 10 0 5">
+                                    <TextBlock Width="120">Tên nhân viên:</TextBlock>
+                                    <TextBox Width="341" Name="txtTen"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10 10 0 5">
+                                    <TextBlock Width="120">Ngày sinh:</TextBlock>
+                                    <TextBox Width="220" Name="txtNgaySinh"></TextBox>
+                                    <TextBlock Width="100" Margin="20 0 0 0">Giới tính:</TextBlock>
+                                    <TextBox Width="200" Name="txtGioiTinh"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10 10 0 5">
+                                    <TextBlock Width="120">Quốc tịch:</TextBlock>
+                                    <TextBox Width="220" Name="txtQuocTich"></TextBox>
+                                    <TextBlock Width="100" Margin="20 0 0 0">Tôn giáo:</TextBlock>
+                                    <TextBox Width="200" Name="txtTonGiao"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10 10 0 5">
+                                    <TextBlock Width="120">Nơi sinh:</TextBlock>
+                                    <TextBox Width="540" Name="txtNoiSinh"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10 10 0 5">
+                                    <TextBlock Width="120">Địa chỉ:</TextBlock>
+                                    <TextBox Width="540" Name="txtDiaChi"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10 10 0 5">
+                                    <TextBlock Width="120">CMND/CCCD:</TextBlock>
+                                    <TextBox Width="300" Name="txtCMND"></TextBox>
+                                </StackPanel>
+                                <Grid Height="50" Background="#FF4A0351" Margin="0 10 0 5">
+                                    <TextBlock Foreground="#CCFFFFFF">Thông tin công việc</TextBlock>
+                                </Grid>
+                                <StackPanel Orientation="Horizontal" Margin="10 10 0 5">
+                                    <TextBlock Width="120">Vị trí:</TextBlock>
+                                    <TextBox Width="200" Name="txtViTri"></TextBox>
+                                    <TextBlock Width="120" Margin="20 0 0 0">Phòng ban:</TextBlock>
+                                    <TextBox Width="200" Name="txtPhongBan"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10 10 0 5">
+                                    <TextBlock Width="120">Chức danh:</TextBlock>
+                                    <TextBox Width="300" Name="txtChucDanh"></TextBox>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="10 10 0 5">
+                                    <TextBlock Width="120">Ngày vào làm:</TextBlock>
+                                    <TextBox Width="300" Name="txtNgayVaoLam"></TextBox>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </Border>
+
+                    </Grid>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+
+</Window>

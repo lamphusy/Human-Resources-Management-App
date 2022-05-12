@@ -1,0 +1,104 @@
+﻿<Window x:Class="HRM_App.TuyenDungControl.ThemTinTuyenDung"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HRM_App.TuyenDungControl"
+       
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        FontSize="14"
+        Height="760" Width="800" Closing="Window_Closing" AllowsTransparency="True" WindowStyle="None" Background="{x:Null}">
+    <Grid>
+        <Path Data="M189.8941,-10.252228 L605.23226,-10.237034 541.27857,39.002667 253.59934,38.880136" Fill="#FF340A80" HorizontalAlignment="Left" Height="50.248" Margin="189.891,22.792,0,0" Stretch="Fill" VerticalAlignment="Top" Width="416.343"/>
+        <Path Data="M164.73121,-27.33345 L196.89822,-27.33345 176.04319,-43.583741 z" Fill="#FF180C2C" HorizontalAlignment="Left" Height="16.25" Margin="178.563,22.75,0,0" Stretch="Fill" VerticalAlignment="Top" Width="32.168"/>
+        <Path Data="M164.73121,-27.33345 L196.89822,-27.33345 176.04319,-43.583741 z" Fill="#FF180C2C" HorizontalAlignment="Left" Height="16.25" Margin="585.178,22.75,0,0" Stretch="Fill" VerticalAlignment="Top" Width="32.168" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+        <Border BorderBrush="#FF340A80" BorderThickness="5" Margin="0,39,0,0">
+            <Grid Margin="0 0 0 0" Background="White">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" Grid.ColumnSpan="2">
+                    <TextBlock 
+                                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                                    Height="40"
+                                    Text="Tin tuyển dụng"
+                                    Foreground="White" FontSize="30" FontFamily="Segoe UI" 
+                                    Background="#FF340A80"
+                                    TextAlignment="Center"
+                                    Width="250">
+                    </TextBlock>
+                    <Path Data="M244.9869,-1.3354515 L245.08947,40.280137 254.02561,40.217884 297.28219,0.078839451" Fill="#FF340A80" HorizontalAlignment="Left" Height="41.614" Margin="209.152,-1.583,0,0" Stretch="Fill" VerticalAlignment="Top" Width="61.813" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                                <SkewTransform AngleY="0" AngleX="0"/>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path Data="M244.9869,-1.3354515 L245.13526,39.965874 254.20418,40.046877 297.28219,0.078839451" Fill="#FF340A80" Height="41.381" Margin="0,-1.333,209.438,0" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Right" Width="61.813"/>
+
+                </Grid>
+                <TextBox Grid.Row="1" Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Mã tuyển dụng" 
+                 VerticalAlignment="Center" Margin="24 0 24 0" Name="txtMaTD"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Tên công việc" 
+                 VerticalAlignment="Center" Margin="24 0 24 0" Name="txtTenTD"></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Vị trí tuyển dụng"
+                 VerticalAlignment="Center" Margin="24 0 24 0" Name="txtViTriTD"></TextBox>
+                <ComboBox Grid.Row="2" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="Phòng đề xuất" 
+                 VerticalAlignment="Center" Margin="24 0 24 0" Name="txbPhg" SelectionChanged="txbPhg_SelectionChanged"></ComboBox>
+                <TextBox Grid.Row="3" Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Số lượng cần tuyển" 
+                 VerticalAlignment="Center" Margin="24 0 24 0" Name="txtSL"></TextBox>
+                <ComboBox Grid.Row="3" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedComboBox}" materialDesign:HintAssist.Hint="Người quản lý" 
+                 VerticalAlignment="Center" Margin="24 0 24 0" Name="txbQuanLy"></ComboBox>
+                <DatePicker Grid.Row="4" Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedDatePicker}" materialDesign:HintAssist.Hint="Ngày tạo" 
+                 VerticalAlignment="Center" HorizontalAlignment="Left" Margin="24,6.8,0,6" Width="168" Name="dpNgayTao"></DatePicker>
+                <DatePicker Grid.Row="4" Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedDatePicker}" materialDesign:HintAssist.Hint="Hạn nộp hồ sơ" 
+                 VerticalAlignment="Center" HorizontalAlignment="Left" Margin="197,6.8,0,6" Width="174" Name="dpHanNop"></DatePicker>
+                <TextBox Grid.Row="5"  Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Lương" 
+                 VerticalAlignment="Center" Margin="24 0 24 0" TextWrapping="Wrap" AcceptsReturn="True"  Name="txtLuong"></TextBox>
+                <TextBox Grid.Row="4" Grid.RowSpan="2" Grid.Column="1" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Yêu cầu công việc" 
+                 VerticalAlignment="Center" Margin="24 0 24 0" TextWrapping="Wrap" AcceptsReturn="True" Height="110" Name="txtYeuCau"></TextBox>
+                <TextBox Grid.Row="6" Grid.ColumnSpan="2" Grid.Column="0" Style="{StaticResource MaterialDesignOutlinedTextBox}" materialDesign:HintAssist.Hint="Ghi chú" 
+                 VerticalAlignment="Center" Margin="24 0 24 0" TextWrapping="Wrap" AcceptsReturn="True" Height="110" Name="txtGhiChu"></TextBox>
+                <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 20">
+                    <Button
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                    Width="100" Margin="10" Background="GreenYellow" Click="Button_Click" Foreground="#DD000000">Xác nhận</Button>
+                    <Button
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                    Width="100" Margin="10" Background="#FFB80D0D" Click="Button_Click_1">Hủy</Button>
+                </StackPanel>
+                <Grid Grid.Row="7" Grid.ColumnSpan="2">
+                    <Image Source="../img/img-td (2).png" Margin="0,30,553.5,-30"/>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

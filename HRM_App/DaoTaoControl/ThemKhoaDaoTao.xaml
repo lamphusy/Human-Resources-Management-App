@@ -1,0 +1,154 @@
+﻿<Window x:Class="HRM_App.DaoTaoControl.ThemKhoaDaoTao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HRM_App.DaoTaoControl"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+         Width="600"
+        Height="700"
+       WindowStyle="None"
+    ResizeMode="NoResize" AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" Background="{x:Null}">
+    <Grid Margin="0,30.667,0,0" Background="White">
+        <Path Data="M196.88286,-4.4939173 L597.50101,-4.4888508 541.27857,39.002667 253.59934,38.880136" Fill="#FF340A80" HorizontalAlignment="Center" Height="44.374" Margin="98.833,-17.167,99.578,0" Stretch="Fill" VerticalAlignment="Top" Width="401.589"/>
+        <Path Data="M153.44584,-27.667118 L193.61042,-27.625451 170.77846,-44.833468 z" Fill="#FF180C2C" HorizontalAlignment="Left" Height="17.208" Margin="81.333,-17.5,0,0" Stretch="Fill" VerticalAlignment="Top" Width="40.167"/>
+        <Path Data="M153.38522,-27.406818 L197.48917,-27.533417 175.61618,-44.53065 z" Fill="#FF180C2C" HorizontalAlignment="Right" Height="17.127" Margin="0,-17.292,77.116,0" Stretch="Fill" VerticalAlignment="Top" Width="44.108" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform X="-0.65099999999999625"/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <GroupBox>
+            <Grid>
+                <Grid>
+                    <TextBlock 
+                                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                                    Height="40"
+                                    Text="Thêm khoá đào tạo"
+                                    Foreground="White" FontSize="25" FontFamily="Segoe UI" 
+                                    Background="#FF340A80"
+                                    TextAlignment="Center"
+                                    Width="270" Margin="156,-39.955,156,0">
+                    </TextBlock>
+                    <Path Data="M244.9869,-1.3354515 L245.13526,39.965874 254.20418,40.046877 297.28219,0.078839451" Fill="#FF340A80" HorizontalAlignment="Left" Height="41.382" Margin="95.876,-41.747,0,0" Stretch="Fill" VerticalAlignment="Top" Width="61.808" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                                <SkewTransform AngleY="0" AngleX="0"/>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path Data="M244.9869,-1.3354515 L245.13526,39.965874 254.20418,40.046877 297.72128,-0.37742069" Fill="#FF340A80" Height="41.381" Margin="0,-41.665,95.625,0" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Right" Width="62.332"/>
+                </Grid>
+                <StackPanel>
+                    <StackPanel.Resources>
+                        <Style TargetType="Label" >
+                            <Setter Property="FontSize" Value="14"/>
+                            <Setter Property="Opacity" Value="0.7"/>
+                            <Setter Property="Width" Value="100"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    <StackPanel Orientation="Vertical" Margin="25 0 25 0">
+                        <WrapPanel Margin="5">
+                            <Label Content="Mã khóa học:"/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbMa" TextChanged="txbMa_TextChanged"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Tên khóa học:"/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbTen"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Mô tả: "/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbMoTa"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Mục tiêu:"/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbMucTieu"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Phòng đề xuất:"/>
+                            <ComboBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbPgDXs"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Người đào tạo:"/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbNgDT"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Thời gian ĐT:"/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbTgDT" IsReadOnly="True"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Bắt đầu:"  Width="100"/>
+                            <DatePicker   Width="150"
+                                   Margin="15 0 0 0" Name="dpBD" DataContextChanged="dpBD_DataContextChanged" SelectedDateChanged="dpBD_SelectedDateChanged"/>
+                            <Label Content="Kết thúc:" Margin="25 0 0 0"  Width="70"/>
+                            <DatePicker   Width="150"
+                                   Margin="5 0 0 0" Name="dpKT" DataContextChanged="dpKT_DataContextChanged" SelectedDateChanged="dpKT_SelectedDateChanged"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Học phí:"/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbHocPhi"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Địa điểm:"/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbDiaDiem"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Ngành học:"/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbNganh"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Loại hình ĐT:"/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbLoaiDT"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Đơn vị tài trợ:"/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbTaiTro"/>
+                        </WrapPanel>
+                        <WrapPanel Margin="5">
+                            <Label Content="Ghi chú:"/>
+                            <TextBox   Width="400"
+                                   Margin="15 0 0 0" Name="txbGhiChu"/>
+                        </WrapPanel>
+                    </StackPanel>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="30">
+                        <Button Background="Green" Opacity="0.7" Name="btnXacNhan" Click="btnXacNhan_Click"
+                            Margin="10" Width="150">
+                            <WrapPanel>
+                                <materialDesign:PackIcon Kind="Tick" Margin="-10 0 10 0" Width="20" Height="20"/>
+                                <TextBlock>Xác nhận</TextBlock>
+                            </WrapPanel>
+                        </Button>
+                        <Button Background="red" Opacity="0.7" Name="btnThoat" Click="btnThoat_Click"
+                             Margin="10" Width="150">
+                            <WrapPanel>
+                                <materialDesign:PackIcon Kind="No" Margin="-10 0 10 0" Width="20" Height="20"/>
+                                <TextBlock>Hủy</TextBlock>
+                            </WrapPanel>
+                        </Button>
+                    </WrapPanel>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

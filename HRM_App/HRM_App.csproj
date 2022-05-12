@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\CefSharp.Common.96.0.180\build\CefSharp.Common.props" Condition="Exists('..\packages\CefSharp.Common.96.0.180\build\CefSharp.Common.props')" />
+  <Import Project="..\packages\cef.redist.x86.96.0.18\build\cef.redist.x86.props" Condition="Exists('..\packages\cef.redist.x86.96.0.18\build\cef.redist.x86.props')" />
+  <Import Project="..\packages\cef.redist.x64.96.0.18\build\cef.redist.x64.props" Condition="Exists('..\packages\cef.redist.x64.96.0.18\build\cef.redist.x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F7712A8-4602-4637-8F60-9E343DC2D135}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HRM_App</RootNamespace>
+    <AssemblyName>HRM_App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Untitled-removebg-preview.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CefSharp, Version=96.0.180.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.96.0.180\lib\net452\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=96.0.180.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Common.96.0.180\lib\net452\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Wpf, Version=96.0.180.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>..\packages\CefSharp.Wpf.96.0.180\lib\net462\CefSharp.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlzEx, Version=5.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.5.0.1\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.8.4.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.8.4\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.WPF, Version=4.7.0.37774, Culture=neutral, PublicKeyToken=0758b07a11a4f466, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.WPF.4.7.0.9\lib\net40\FontAwesome.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.FixTooltip.0.9.8\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.3.2, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.3\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.2.1.2, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.2.1\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.31\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CongLuongControl\BangDieuChinhHeSo.xaml.cs">
+      <DependentUpon>BangDieuChinhHeSo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CongLuongControl\ChamCongCaNhan.cs" />
+    <Compile Include="CongLuongControl\CongLuong.xaml.cs">
+      <DependentUpon>CongLuong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CongLuongControl\Lich.xaml.cs">
+      <DependentUpon>Lich.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CongLuongControl\LichTuan.xaml.cs">
+      <DependentUpon>LichTuan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DaoTaoControl\DanhGia.xaml.cs">
+      <DependentUpon>DanhGia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DaoTaoControl\DaoTao.xaml.cs">
+      <DependentUpon>DaoTao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DaoTaoControl\KhoaDaoTao.cs" />
+    <Compile Include="DaoTaoControl\NhanVienThamGia.xaml.cs">
+      <DependentUpon>NhanVienThamGia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DaoTaoControl\NhanVienThamGiaAdd.xaml.cs">
+      <DependentUpon>NhanVienThamGiaAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DaoTaoControl\NhanVienThamGiaDT.cs" />
+    <Compile Include="DaoTaoControl\ThemKhoaDaoTao.xaml.cs">
+      <DependentUpon>ThemKhoaDaoTao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.xaml.cs">
+      <DependentUpon>ForgotPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainControl.xaml.cs">
+      <DependentUpon>MainControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhongBanControl\ChiTietNhanVien.xaml.cs">
+      <DependentUpon>ChiTietNhanVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhongBanControl\ChiTietPhongBan.xaml.cs">
+      <DependentUpon>ChiTietPhongBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhongBanControl\ChuyenPhongBan.xaml.cs">
+      <DependentUpon>ChuyenPhongBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhongBanControl\CNhanVien.cs" />
+    <Compile Include="PhongBanControl\CPhongBan.cs" />
+    <Compile Include="PhongBanControl\PhongBan.xaml.cs">
+      <DependentUpon>PhongBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhongBanControl\ThemPhongBan.xaml.cs">
+      <DependentUpon>ThemPhongBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhongBanControl\XoaPhongBan.xaml.cs">
+      <DependentUpon>XoaPhongBan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QLNSControl\NhanSu.xaml.cs">
+      <DependentUpon>NhanSu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="System\Drawing\Image.cs" />
+    <Compile Include="System\Drawing\Imaging.cs" />
+    <Compile Include="TuyenDungControl\HoTroDangTinTD.xaml.cs">
+      <DependentUpon>HoTroDangTinTD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TuyenDungControl\ThemTinTuyenDung.xaml.cs">
+      <DependentUpon>ThemTinTuyenDung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TuyenDungControl\TinTuyenDung.cs" />
+    <Compile Include="TuyenDungControl\TinTuyenDungControl.xaml.cs">
+      <DependentUpon>TinTuyenDungControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TuyenDungControl\TuyenDung.xaml.cs">
+      <DependentUpon>TuyenDung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TuyenDungControl\UngVien.cs" />
+    <Compile Include="TuyenDungControl\UngVienThamGia.xaml.cs">
+      <DependentUpon>UngVienThamGia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIDesign.xaml.cs">
+      <DependentUpon>UIDesign.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CongLuongControl\BangDieuChinhHeSo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CongLuongControl\CongLuong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CongLuongControl\Lich.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CongLuongControl\LichTuan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DaoTaoControl\DanhGia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DaoTaoControl\DaoTao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DaoTaoControl\NhanVienThamGia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DaoTaoControl\NhanVienThamGiaAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DaoTaoControl\ThemKhoaDaoTao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForgotPassword.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PhongBanControl\ChiTietNhanVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhongBanControl\ChiTietPhongBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhongBanControl\ChuyenPhongBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhongBanControl\PhongBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhongBanControl\ThemPhongBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhongBanControl\XoaPhongBan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QLNSControl\NhanSu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TuyenDungControl\HoTroDangTinTD.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TuyenDungControl\ThemTinTuyenDung.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TuyenDungControl\TinTuyenDungControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TuyenDungControl\TuyenDung.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TuyenDungControl\UngVienThamGia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIDesign.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\login-logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1-removebg-preview-_1_.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Untitled-removebg-preview.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\dao-tao-test.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Lich Cham Cong %28Theo tuan%29 Template 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\tuyen-dung.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\img-td.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\img-td %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Assets\closeBtn_default.png" />
+    <Resource Include="img\Assets\closeBtn_MouseOver.png" />
+    <Resource Include="img\Assets\img_background.png" />
+    <Resource Include="img\Assets\img_contact.png" />
+    <Resource Include="img\Assets\img_home.png" />
+    <Resource Include="img\Assets\img_map.png" />
+    <Resource Include="img\Assets\img_message.png" />
+    <Resource Include="img\Assets\img_setting.png" />
+    <Resource Include="img\Assets\img_signout.png" />
+    <Resource Include="img\Assets\tgBtn_default.png" />
+    <Resource Include="img\Assets\tgBtn_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\hinh-nen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\hinh-nen-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\user_female.png" />
+    <Resource Include="img\user_male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\login_img_2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.2.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.2.1\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.2.1\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.2.1\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x64.96.0.18\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x64.96.0.18\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('..\packages\cef.redist.x86.96.0.18\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\cef.redist.x86.96.0.18\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.96.0.180\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.96.0.180\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('..\packages\CefSharp.Common.96.0.180\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\CefSharp.Common.96.0.180\build\CefSharp.Common.targets'))" />
+  </Target>
+  <Import Project="..\packages\CefSharp.Common.96.0.180\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.96.0.180\build\CefSharp.Common.targets')" />
+</Project>

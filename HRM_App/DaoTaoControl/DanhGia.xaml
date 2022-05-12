@@ -1,0 +1,26 @@
+﻿<Window x:Class="HRM_App.DaoTaoControl.DanhGia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:HRM_App.DaoTaoControl"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize"
+        Title="Đánh giá" Height="250" Width="600">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Foreground="#FF673AB7" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" FontWeight="Bold" Margin="0 0 0 25">ĐÁNH GIÁ</TextBlock>
+            <ComboBox Height="40" Name="cboDanhGia" HorizontalAlignment="Center" 
+                     Margin="0 0 0 30" Width="200" FontSize="18" Foreground="Gray" materialDesign:HintAssist.Hint="Chọn đánh giá" Style="{StaticResource MaterialDesignComboBox}">
+                <ComboBoxItem>Không</ComboBoxItem>
+                <ComboBoxItem>Tốt</ComboBoxItem>
+                <ComboBoxItem>Khá</ComboBoxItem>
+                <ComboBoxItem>Trung bình</ComboBoxItem>
+                <ComboBoxItem>Yếu</ComboBoxItem>
+                <ComboBoxItem>Kém</ComboBoxItem>
+            </ComboBox>
+            <Button Width="130"  Name="btnXacNhan" Click="btnXacNhan_Click">Xác nhận</Button>
+        </StackPanel>
+        
+    </Grid>
+</Window>

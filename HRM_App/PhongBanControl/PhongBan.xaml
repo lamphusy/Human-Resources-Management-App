@@ -1,0 +1,132 @@
+﻿<UserControl x:Class="HRM_App.PhongBanControl.PhongBan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HRM_App.PhongBanControl"
+             mc:Ignorable="d" 
+             Width="1230" Height="710">
+    <Grid Name="pnHienThiAll" >
+        <Grid>
+            <TextBlock 
+                                    HorizontalAlignment="Left" VerticalAlignment="Top"
+                                    Height="50"
+                                    Text="Phòng ban"
+                                    Foreground="White" FontSize="35" FontWeight="Bold" FontFamily="Segoe UI" 
+                                    Background="#FF340A80"
+                                    TextAlignment="Center"
+                                    Width="250" Margin="-22.011,0,0,0">
+            </TextBlock>
+            <Path Data="M246.08749,-0.017455169 L245.58506,50.000126 254.30983,50.000126 296.5913,0.0059975709" Fill="#FF340A80" HorizontalAlignment="Left" Height="50.016" Margin="224.328,-0.016,0,0" Stretch="Fill" VerticalAlignment="Top" Width="60.289"/>
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0" Grid.RowSpan="5" Margin="0 50 0 0">
+                <WrapPanel HorizontalAlignment="Center" Name="pnHienThi">
+                    <WrapPanel.Resources>
+                        <DataTemplate x:Key="phongTemplate">
+                            <Border Margin="20 10 40 20">
+                                <materialDesign:Card Width="450" Height="230" Cursor="Hand" x:Name="cardPhong" MouseEnter="cardPhong_MouseEnter" 
+                                                     MouseLeave="cardPhong_MouseLeave" Background="#FF54135B">
+                                    <Border>
+                                        <Grid>
+                                            <Grid  MouseDown="cardPhong_MouseDown">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="0.5*"/>
+                                                    <RowDefinition Height="4*"/>
+                                                    <RowDefinition Height="6*"/>
+                                                </Grid.RowDefinitions>
+                                                <TextBlock Grid.Row="0" Visibility="Hidden" Text="{Binding MaPhong}" ></TextBlock>
+                                                <TextBlock Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="40" FontWeight="ExtraBold" Foreground="White">
+                                                                                      PHÒNG
+                                                </TextBlock>
+                                                <WrapPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 -20 0 0" >
+                                                    <TextBlock FontWeight="ExtraBold" FontSize="{Binding FontSizeTen}" TextWrapping="WrapWithOverflow" Text="{Binding TenPhong}"
+                                                     VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White"></TextBlock>
+                                                </WrapPanel>
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+                                </materialDesign:Card>
+                            </Border>
+                        </DataTemplate>
+                    </WrapPanel.Resources>
+
+                </WrapPanel>
+            </ScrollViewer>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid Width="50" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="33.743,59.666,28.075,0" Background="#FF340A80" Height="50">
+                    <materialDesign:PopupBox
+  PlacementMode="BottomAndAlignCentres"
+  ToolTipService.Placement="Left"
+  ToolTip="Công cụ"
+  IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" RenderTransformOrigin="0.5,0.5">
+                        <materialDesign:PopupBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </materialDesign:PopupBox.RenderTransform>
+                        <StackPanel>
+                            <Button 
+                    ToolTip="Thêm phòng ban"
+                    ToolTipService.Placement="Custom"
+                     Width="60" Height="60" Padding="0" Name="btnThemPhong" Click="btnThemPhong_Click" FontSize="30">
+                                <materialDesign:PackIcon Kind="HomePlus"  Foreground="#FF1DCA3E" Width="60" Height="60"/>
+                            </Button>
+                            <Button
+                    ToolTip="Xóa phòng ban"
+                    ToolTipService.Placement="Custom"
+                     Width="60" Height="60" Padding="0" Name="btnXoa" Click="btnXoa_Click">
+                                <materialDesign:PackIcon Kind="HomeRemove"  Foreground="#FFD34B26" Width="60" Height="60"/>
+                            </Button>
+                            <Button 
+                    ToolTip="Chuyển phòng ban"
+                    ToolTipService.Placement="Custom"
+                     Width="60" Height="60" Padding="0" Name="btnChuyenPhong" Click="btnChuyenPhong_Click">
+                                <materialDesign:PackIcon Kind="HomeSwap" Foreground="#FF5BC0B4" Width="60" Height="60"/>
+                            </Button>
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                </Grid>
+            </Grid>
+            <!--<Grid Grid.Row="1" Grid.Column="1">
+                <Button
+                    ToolTip="Thêm phòng ban"
+                    ToolTipService.Placement="Left"
+                    Style="{StaticResource MaterialDesignFloatingActionButton}" Width="60" Height="60" Padding="0" Name="btnThemPhong" Click="btnThemPhong_Click" Background="#FF1DCA3E">
+                    <materialDesign:PackIcon Kind="HomeAdd" Width="35" Height="35"/>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Button
+                    ToolTip="Xóa phòng ban"
+                    ToolTipService.Placement="Left"
+                    Style="{StaticResource MaterialDesignFloatingActionButton}" Width="60" Height="60" Padding="0" Name="btnXoa" Background="#FFD34B26" Click="btnXoa_Click">
+                    <materialDesign:PackIcon Kind="HomeRemove" Width="35" Height="35"/>
+                </Button>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="1">
+                <Button 
+                    ToolTip="Chuyển phòng ban"
+                    ToolTipService.Placement="Left"
+                    Style="{StaticResource MaterialDesignFloatingActionButton}" Width="60" Height="60" Padding="0" Name="btnChuyenPhong" Background="#FF5BC0B4" Click="btnChuyenPhong_Click">
+                    <materialDesign:PackIcon Kind="HomeSwap" Width="35" Height="35"/>
+                </Button>
+            </Grid>-->
+        </Grid>
+    </Grid>
+</UserControl>

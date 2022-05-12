@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="HRM_App.DaoTaoControl.DaoTao"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Loaded="UserControl_Loaded"
+             xmlns:fa ="http://schemas.fontawesome.io/icons/"
+             xmlns:local="clr-namespace:HRM_App"
+             mc:Ignorable="d" 
+             d:DesignWidth="1230">
+    <UserControl.Resources>
+        <DataTemplate x:Key="trainTemplate" x:Name="abc">
+            <GroupBox>
+                <StackPanel Margin="15 -5 15 0">
+                    <TextBlock FontSize="14" FontWeight="Bold" Margin="0" Text="{Binding MaDaoTao}"></TextBlock>
+                    <TextBlock FontSize="32" FontWeight="Bold" Margin="0 -5 10 5" Text="{Binding TenKhoaDaoTao}" TextWrapping="NoWrap"></TextBlock>
+                    <TextBlock FontSize="14" FontWeight="SemiBold" Foreground="Gray" Margin="0 5 0 15" Opacity="0.6" Text="{Binding GioiThieuKhoaHoc}" TextWrapping="NoWrap"></TextBlock>
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="User" Width="23" Height="23" Foreground="Black" Margin="0 0 0 5"/>
+                        <TextBlock Text="{Binding SoLuongDaoTao}" Margin="5 0 0 0" FontSize="16" FontWeight="SemiBold"/>
+
+                    </WrapPanel>
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="Clock"  Width="23" Height="23" Foreground="Black"  Margin="0 0 0 5"/>
+                        <TextBlock Text="{Binding ThoiGianDaoTao}" Margin="5 0 0 0" FontSize="16" FontWeight="SemiBold"/>
+                    </WrapPanel>
+                    <WrapPanel>
+                        <materialDesign:PackIcon Kind="Money"  Width="23" Height="23" Foreground="Black"  Margin="0 0 0 5"/>
+                        <TextBlock Text="{Binding ChiPhiKhoaHoc}" Margin="5 0 0 0" FontSize="16" FontWeight="SemiBold"/>
+                    </WrapPanel>
+                    <Grid Background="Gray" Height="2" Opacity="0.5" Margin="0 10 0 0"/>
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Style="{StaticResource MaterialDesignFlatLightButton}" Padding="5 0" Margin="0 5 5 0" Name="btnSua" Click="btnSua_Click">
+                                <fa:FontAwesome Icon="Edit"  FontSize="23" Foreground="#32CD32"/>
+                            </Button>
+                            <Button Style="{StaticResource MaterialDesignFlatLightButton}" Padding="5 0" Margin="0 3 5 0" Name="btnXoa" Click="btnXoa_Click">
+                                <fa:FontAwesome Icon="Remove" FontSize="25" Foreground="#FF0000"/>
+                            </Button>
+                        </StackPanel>
+                        <Button Style="{StaticResource MaterialDesignFlatLightButton}" Padding="5 0" Margin="0 5 5 0" HorizontalAlignment="Left" Name="btnChiTiet" Click="btnChiTiet_Click">
+                            <TextBlock Text="Chi tiết" ></TextBlock>
+                        </Button>
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid Background="#FFF0F2F5">
+        <StackPanel>
+            <Grid>
+                <TextBlock 
+                                    HorizontalAlignment="Left" VerticalAlignment="Top"
+                                    Height="50"
+                                    Text="Đào tạo"
+                                    Foreground="White" FontSize="35" FontWeight="Bold" FontFamily="Segoe UI" 
+                                    Background="#FF340A80"
+                                    TextAlignment="Center"
+                                    Width="250">
+                </TextBlock>
+                <Path Data="M244.9869,-1.3354515 L245.56126,49.999126 254.63018,50.080129 297.28219,0.078839451" Fill="#FF340A80" HorizontalAlignment="Left" Height="51.414" Margin="244.965,-1.333,0,0" Stretch="Fill" VerticalAlignment="Top" Width="61.813"/>
+            </Grid>
+            <StackPanel Margin="25 10 25 10">
+                <StackPanel Orientation="Horizontal">
+                    <Button Height="auto" Margin="10 0 0 0" materialDesign:ShadowAssist.ShadowDepth="Depth0" Name="btnReload" Click="btnReload_Click" Background="#673ab7">
+                        <materialDesign:PackIcon Kind="Reload" Width="35" Height="35" Foreground="White"/>
+                    </Button>
+                    <Button Background="#FFF0F2F5" Height="auto" BorderThickness="0" materialDesign:ShadowAssist.ShadowDepth="Depth0" Panel.ZIndex="10" Margin="0 0 0 2" Name="btnTimKiem" Click="btnTimKiem_Click">
+                        <materialDesign:PackIcon Kind="Search" Width="35" Height="35" Foreground="#673ab7" Margin="0 0 0 0"/>
+                    </Button>
+
+                    <TextBox KeyDown="txbTimKiem_KeyDown" Margin="-50 0 0 0" Width="600"  VerticalContentAlignment="Center" FontSize="18" Padding="50 0 0 0" materialDesign:HintAssist.Hint="Tìm kiếm" Name="txbTimKiem"></TextBox>
+                    <ComboBox
+                      materialDesign:HintAssist.Hint="Loại tìm kiếm" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Margin="25 0 0 0"
+                    FontWeight="SemiBold" Name="cbxLoaiTimKiem">
+                        <ComboBoxItem Content="Loại tìm kiếm" IsEnabled="False"/>
+                        <ComboBoxItem
+                        Content="Tên khóa đào tạo" />
+                        <ComboBoxItem
+                        Content="Tên nhân viên" />
+                    </ComboBox>
+                    <Button FontSize="18"  Width="240" Margin="30 0 5 0" Name="btnThemKhoa" Click="btnThemKhoa_Click" Background="#673ab7">
+                        Thêm khóa đào tạo
+                    </Button>
+                </StackPanel>
+                <WrapPanel Margin="0,25,-0.2,0" x:Name="pnHienThi">
+                    <WrapPanel.Resources>
+                        <Style TargetType="{x:Type materialDesign:Card}">
+                            <Setter Property="Margin" Value="10"/>
+                            <Setter Property="Width" Value="380"/>
+                            <Setter Property="Height" Value="auto"/>
+                            <Setter Property="FontSize" Value="18"/>
+                        </Style>
+
+                    </WrapPanel.Resources>
+                </WrapPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
+

@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="HRM_App.CongLuongControl.CongLuong"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:HRM_App.CongLuongControl" Loaded="UserControl_Loaded"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1260" Background="Black"
+             >
+    <Grid Background="White">
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"></ColumnDefinition>
+            <ColumnDefinition Width="980"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Border BorderBrush="#512da8" BorderThickness="5" Grid.Column="0" >
+            <Grid>
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+                    <ComboBox  Name="cboChonNV"
+            materialDesign:HintAssist.Hint="Chọn nhân viên"
+            materialDesign:HintAssist.HintOpacity=".26"
+            FontSize="18"
+            IsEditable="True" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,69,0,0" Width="250" Height="40" SelectionChanged="cboChonNV_SelectionChanged">
+                        <ComboBoxItem
+                    Content="Luu Bi" />
+                        <ComboBoxItem
+                    Content="Truong Phi" />
+                        <ComboBoxItem
+                    Content="Quan Vu" />
+                        <ComboBoxItem
+                    Content="Tao Thao" />
+                        <ComboBoxItem
+                    Content="Ha Hau Don" />
+                        <ComboBoxItem
+                    Content="Luu Ban" />
+                    </ComboBox>
+                    <Button Margin="10" FontSize="16" Background="#512da8" Name="btnDiemDanh" Click="btnDiemDanh_Click">Điểm danh</Button>
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Calendar" Width="30" Height="30" Margin="5 0 0 0" Foreground="#FF20207A" Cursor="Hand" Name="btnLichNhanVien" MouseDown="btnLichNhanVien_MouseDown"/>
+                        <materialDesign:PackIcon Kind="Money100" Width="30" Height="30" Margin="10 0 0 0" Foreground="#FF20207A" Cursor="Hand" Name="btnCacHeSo" MouseDown="btnCacHeSo_MouseDown"/>
+                        <materialDesign:PackIcon Kind="Refresh" Width="30" Height="30" Margin="10 0 0 0" Foreground="#FF20207A" Cursor="Hand" Name="btnRefresh" MouseDown="btnRefresh_MouseDown"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <WrapPanel Grid.Row="2"  VerticalAlignment="Bottom">
+
+                    
+                </WrapPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <TextBlock 
+                                    HorizontalAlignment="Left" VerticalAlignment="Top"
+                                    Height="50"
+                                    Text="Công lương"
+                                    Foreground="White" FontSize="35" FontWeight="Bold" FontFamily="Segoe UI" 
+                                    Background="#FF340A80"
+                                    TextAlignment="Center"
+                                    Width="280">
+            </TextBlock>
+
+        </Grid>
+        <Grid Grid.Column="1" >
+            <Grid Grid.Column="0" Grid.Row="0" Name="pnHienThi">
+
+            </Grid>
+        </Grid>
+
+
+
+
+
+    </Grid>
+</UserControl>

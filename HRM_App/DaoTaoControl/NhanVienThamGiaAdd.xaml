@@ -1,0 +1,24 @@
+﻿<Window x:Class="HRM_App.DaoTaoControl.NhanVienThamGiaAdd"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HRM_App.DaoTaoControl"
+             mc:Ignorable="d" ResizeMode="NoResize"
+             Height="280" Width="700" Background="White">
+    <StackPanel>
+        <TextBlock Foreground="#FF340A80" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="16" FontSize="28" FontWeight="Bold"> THÊM NGƯỜI THAM GIA KHÓA ĐÀO TẠO</TextBlock>
+        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+            <TextBlock FontSize="20" FontWeight="SemiBold" Width="120">Phòng:</TextBlock>
+            <ComboBox FontSize="18" Width="400" Name="cboPhong" SelectionChanged="cboPhong_SelectionChanged"></ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10" HorizontalAlignment="Center">
+            <TextBlock FontSize="20" FontWeight="SemiBold" Width="120">Nhân viên:</TextBlock>
+            <ComboBox FontSize="18" Width="400" Name="cboNhanVien"></ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="20" HorizontalAlignment="Center">
+            <Button Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="#FF020300" FontWeight="SemiBold" FontSize="18" Width="80" Name="btnOK" Click="btnOK_Click">OK</Button>
+            <Button Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="#FF080B01" FontWeight="SemiBold" FontSize="18"  Width="80" Name="btnHuy" Click="btnHuy_Click">HỦY</Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

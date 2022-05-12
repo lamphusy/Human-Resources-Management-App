@@ -1,0 +1,143 @@
+﻿<Window x:Class="HRM_App.DaoTaoControl.NhanVienThamGia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HRM_App.DaoTaoControl"
+        mc:Ignorable="d"
+        Title="Danh sách nhân viên tham gia" Height="650" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" Background="{x:Null}" AllowsTransparency="True">
+    <Grid Margin="0,10,0,0">
+        <Path Data="M189.8941,-10.252228 L605.23226,-10.237034 541.27857,39.002667 253.59934,38.880136" Fill="#FF340A80" HorizontalAlignment="Left" Height="50.248" Margin="189.891,-10.208,0,0" Stretch="Fill" VerticalAlignment="Top" Width="416.343"/>
+        <Path Data="M172.36536,-27.33345 L196.89822,-27.33345 183.89723,-37.488633 z" Fill="#FF180C2C" HorizontalAlignment="Left" Height="10.155" Margin="178.53,-10.242,0,0" Stretch="Fill" VerticalAlignment="Top" Width="24.534"/>
+        <Path Data="M172.36536,-27.33345 L196.89822,-27.33345 183.89723,-37.488633 z" Fill="#FF180C2C" HorizontalAlignment="Left" Height="10.156" Margin="593.082,-10.042,0,0" Stretch="Fill" VerticalAlignment="Top" Width="24.532" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        <Border BorderBrush="#FF340A80" BorderThickness="2">
+            <StackPanel Background="White">
+                <Grid>
+                    <TextBlock 
+                                    HorizontalAlignment="Center" VerticalAlignment="Top"
+                                    Height="40"
+                                    Text="Nhân viên tham gia"
+                                    Foreground="White" FontSize="25" FontFamily="Segoe UI" 
+                                    Background="#FF340A80"
+                                    TextAlignment="Center"
+                                    Width="270">
+                    </TextBlock>
+                    <Path Data="M244.9869,-1.3354515 L245.13526,39.965874 254.20418,40.046877 297.28219,0.078839451" Fill="#FF340A80" HorizontalAlignment="Left" Height="41.382" Margin="203.768,-1.458,0,0" Stretch="Fill" VerticalAlignment="Top" Width="61.808" RenderTransformOrigin="0.5,0.5">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                                <SkewTransform AngleY="0" AngleX="0"/>
+                                <RotateTransform Angle="0"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path Data="M244.9869,-1.3354515 L245.13526,39.965874 254.20418,40.046877 297.72128,-0.37742069" Fill="#FF340A80" Height="41.381" Margin="0,-1.333,206.375,0" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Right" Width="62.332"/>
+                </Grid>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" Height="520" Margin="10,0,-0.2,15" >
+                    <ListView x:Name="lsvNV" HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" FontSize="13" Width="787" >
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                <Setter Property="Height" Value="40"/>
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+                                <GridView.ColumnHeaderContainerStyle>
+                                    <Style  TargetType="GridViewColumnHeader">
+                                        <Setter Property="Height" Value="50"/>
+                                        <Setter Property="Foreground" Value="#FF340A80"/>
+                                        <Setter Property="FontWeight" Value="SemiBold"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type GridViewColumnHeader}">
+                                                    <Border>
+                                                        <TextBlock x:Name="ContentHeader" Text="{TemplateBinding Content}" Width="{TemplateBinding Width}" TextAlignment="Center" VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="OverridesDefaultStyle" Value="True" />
+                                        <Setter Property="FontSize" Value="13"/>
+                                        <Setter Property="FontFamily" Value="Segoe UI" />
+                                    </Style>
+                                </GridView.ColumnHeaderContainerStyle>
+
+                                <GridViewColumn Header="MSNV" Width="100">
+                                    <GridViewColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding MANV}" TextAlignment="Center"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Tên" Width="180" >
+                                    <GridViewColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Ten}" TextAlignment="Center"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Phòng ban" Width="120">
+                                    <GridViewColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding PhongBan}" TextAlignment="Center"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="SĐT" Width="120">
+                                    <GridViewColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding SDT}" TextAlignment="Center"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Tiến độ" Width="110">
+                                    <GridViewColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding TienDo}" TextAlignment="Center"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="Đánh giá" Width="135" >
+                                    <GridViewColumn.CellTemplate >
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding DanhGia}" TextAlignment="Center"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+                <WrapPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button Content="Thêm" Margin="5" Width="90"
+                            Height="40" FontSize="16" FontWeight="Bold" Name="btnAdd" Click="btnAdd_Click" Background="#FF008C00" BorderBrush="DarkGreen"></Button>
+                    <Button Content="Xóa" Margin="5" Width="90"
+                            Height="40" FontSize="16" FontWeight="Bold" Name="btnDel" Click="btnDel_Click"  Background="#FFFF4848" BorderBrush="#FFFF4848" ></Button>
+                    <Button Content="Đánh giá" Margin="5" Width="120"
+                            Height="40" FontSize="16" FontWeight="Bold" Name="btnDanhGia" Click="btnDanhGia_Click"  Background="#FF4186FA" BorderBrush="#FF4186FA" ></Button>
+                    <Button Content="Đóng" Margin="5" Width="90"
+                            Height="40" FontSize="16" FontWeight="Bold" Name="btnClose" Click="btnClose_Click" Background="Gray" BorderBrush="Gray"></Button>
+                </WrapPanel>
+
+            </StackPanel>
+        </Border>
+
+
+
+    </Grid>
+
+</Window>

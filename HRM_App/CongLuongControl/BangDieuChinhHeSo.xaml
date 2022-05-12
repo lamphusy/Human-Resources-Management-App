@@ -1,0 +1,37 @@
+﻿<Window x:Class="HRM_App.CongLuongControl.BangDieuChinhHeSo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HRM_App.CongLuongControl"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Bảng điều khiển" Height="270" Width="600">
+    <Grid x:Name="bg">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <TextBlock Text="Lương cơ bản(VND): " Width="150" VerticalAlignment="Center" Margin="50 0 10 0" FontSize="16"  Foreground="#FF515151" FontWeight="SemiBold"/>
+            <TextBox FontSize="16" Width="350" Style="{StaticResource MaterialDesignTextBoxBase}" VerticalAlignment="Center" Background="LightGray" Name="txtLuongCoBan" IsReadOnly="True"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1">
+            <TextBlock Text="Hệ số khấu trừ/ 1 ngày vắng: " Width="220" VerticalAlignment="Center" Margin="50 0 10 0" FontSize="16"  Foreground="#FF515151" FontWeight="SemiBold"/>
+            <TextBox FontSize="16" Width="250"  Style="{StaticResource MaterialDesignTextBoxBase}" VerticalAlignment="Center" Background="LightGray" Name="txtHeSoTru" IsReadOnly="True"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="2">
+            <TextBlock Text="Hệ số phụ cấp: " Width="220" VerticalAlignment="Center" Margin="50 0 10 0" FontSize="16"  Foreground="#FF515151" FontWeight="SemiBold"/>
+            <TextBox FontSize="16" Width="250" Style="{StaticResource MaterialDesignTextBoxBase}" VerticalAlignment="Center" Background="LightGray" Name="txtHeSoPhuCap" IsReadOnly="True"/>
+        </StackPanel>
+        <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="3">
+            <Button Margin="0 0 10 0" Style="{StaticResource MaterialDesignFlatButton}" FontWeight="Bold" Click="Button_Click">OK</Button>
+            <Button Style="{StaticResource MaterialDesignFlatButton}" FontWeight="Bold" Click="Button_Click_1">Chỉnh sửa</Button>
+        </WrapPanel>
+        <TextBlock Grid.Row="3" VerticalAlignment="Center" Margin="50 0 0 0" Visibility="Hidden" Name="textChoPhep">Cho phép chỉnh sửa</TextBlock>
+
+    </Grid>
+</Window>
